@@ -1,0 +1,22 @@
+.item-list
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 -10px;
+    margin-top: 30px;
+    gap:10px;
+    text-decoration: none;
+
+   
+}
+.item-list a
+{
+    text-decoration: none;
+    color:black;
+}
+.item-list:hover
+{
+    text-decoration: none;
+    color:black;
+}

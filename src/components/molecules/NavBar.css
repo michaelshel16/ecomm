@@ -1,0 +1,11 @@
+
+.nav-item
+{
+    text-decoration: none;
+    color:white;
+    margin:0 10px;
+}
+.nav-item:hover
+{
+    color:#C46D36;
+}

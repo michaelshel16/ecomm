@@ -1,0 +1,37 @@
+.signin-form-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+
+}
+.signin-form-title
+{
+    color:white;
+}
+.signin-form-submit-button button
+{
+    background-color: #C46D36;
+    color:white;
+    font-size: 20px;
+    width:200px;
+    height:100%;
+    padding:20px;
+    border-radius: 10px;
+    border: none;
+
+}
+form
+{   margin: 50px 50px;
+    padding: 40px;
+     width:50%;
+    height:100%;
+    background-color: #212529;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+    border-radius: 20px;
+}

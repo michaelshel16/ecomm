@@ -1,0 +1,42 @@
+.footer-container
+{
+    background-color: #212529;
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+    margin-top:70px;
+    
+    width:100%;
+}
+.footer-help-section
+{
+    color:white;
+}
+.footer-policy-section
+{
+    color:white;
+}
+.footer-socialmedia-section
+{
+    color:white;
+    gap:20px;
+}
+.footer-office-address-section
+{
+    color:white;
+}
+.footer-mail-section
+{
+    color:white;
+}
+.footer-socialmedia-section-logo-section
+{   display:flex;
+    flex-direction: column;
+    
+    gap:20px;
+}
+.footer-socialmedia-section-logo
+{
+    display:flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Lobster&display=swap');
+.about-section1
+{   display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C46D36;
+    width:80%;
+    height:200px;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    border-top-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    margin:50px;
+    color:white;
+}
+section
+{   display: flex;
+    justify-content: center;
+
+}
+.about-content
+{   display: flex;
+    justify-content: space-between;
+    background-color: #212529;
+    color:white;
+    padding:12px;
+    width:40%;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    position: absolute;
+}
+.about-content p
+{
+  width:80%;
+}
+.about-content-container
+{
+    display:flex;
+    margin-bottom: 200px;
+   
+   
+}
+.about-content-img
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:100px;
+    left: 50%;
+}
+.about-content-img img
+{
+    border-radius: 40px;
+}
+.about-motto
+{
+    color:black;
+    font-size: 30px;
+}
+.about-motto-title
+{
+    text-align: center;
+}
+.about-motto p
+{
+ font-family: "lobster";
+ text-align: center;
+}
+.about-motto-title
+{
+    font-family: "Archivo";
+}
