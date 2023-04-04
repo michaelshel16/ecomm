@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import ItemCard from '../molecules/ItemCard';
 import "./RecommendationList.css";
+import { Link } from 'react-router-dom';
 
 function RecommendationList() {
    const[recommendationList, setrecommendationList] = useState([]);
@@ -26,12 +27,13 @@ function RecommendationList() {
   return (
     <div>
         <Container>
-        <div className='recomm-list-title'><h3>Recommendation List</h3></div>
-        <div className='recomm-list'>
+        <div className='recomm-list-title'><h3>Electronics</h3></div>
+    <div className='recomm-list'>
       
       {
         recommendationList.length===0?<h3>No items found</h3>:
         recommendationList.map((item,index)=>(
+          <Link to ={`/product/${item.id}`} key={index}>
         <ItemCard 
          key = {index}
         itemImg       =     {item.itemImg}
@@ -40,7 +42,7 @@ function RecommendationList() {
         itemDiscount  =     {item.itemDiscount}
         itemTitle     =     {item.itemTitle}
         />
-        
+        </Link>
         )
         
 

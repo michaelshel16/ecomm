@@ -12,9 +12,7 @@ import Signin from './components/Pages/Signin';
 import ProductDetails from './components/Pages/ProductDetails';
 import
 {
-  BrowserRouter as Router,
-  Switch,
-  Route
+  Routes,Route
 }from "react-router-dom";
 
 
@@ -36,47 +34,42 @@ function App() {
   return (
     
       <div>
-       
-
-         <Router>
-      
-            <Navbar
+       <Navbar
             cartList ={cartList}
             />
+
+         <Routes>
+      
+            
            
-             <Switch>
+            
              
-              <Route exact path="/">
-                <Home/>
-              </Route>
-        
-              <Route  path="/about">
-                <About/>
-               </Route>
-
-              <Route  path ="/signin">
-               <Signin/>
-              </Route>
-
-               <Route  path ="/signup">
-                <Signup/>
-              </Route>
+              <Route exact path="/" element={<Home/>}/>
                
-               <Route  path ="/product/:id">
-                <ProductDetails
-                addtoCart={addtoCart}/>
-               </Route>
+        
+              <Route  path="/about" element={<About/>}/>
+               
+               
 
-               <Route exact path ="/cart">
-                 <Cart cartList = {cartList}
+              <Route  path ="/signin" element={<Signin/>}/>
+               
+
+               <Route  path ="/signup" element={<Signup/>}/>
+              
+               <Route  path ="/product/:id" element={ <ProductDetails
+                addtoCart={addtoCart}/>}/>
+               
+           
+
+               <Route exact path ="/cart" element={ <Cart cartList = {cartList}
                        removefromCart={removefromCart} 
-                        />
-               </Route>
+                        />}/>
+                
+            
 
-            </Switch> 
             
             
-        </Router>
+        </Routes>
         <Footer/>
          
          

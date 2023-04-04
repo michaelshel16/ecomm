@@ -14,29 +14,41 @@ import {faArrowRotateLeft} from '@fortawesome/free-solid-svg-icons';
 
 function ProductDetails({addtoCart}){ 
   let {id} = useParams();
-  const [productDetails, setproductDetails] = useState('');
+  const [productDetails, setproductDetails]          = useState('');
+  const [keyOne,setkeyOne]                           = useState('itemdetailimg1exp');
+  const [imagerender,setimagerender]                 = useState(productDetails[keyOne]);
+
+  useEffect (() => {
+    axios.get(`https://barterwdcash-default-rtdb.asia-southeast1.firebasedatabase.app/item-list-electronics/${id}.json`)
+    .then(res => {
+      res.data === null?console.log(res.data):
+      console.log(res.data)
+      setproductDetails(res.data)
+    } )
+
+    axios.get(`https://barterwdcash-recomlist-default-rtdb.asia-southeast1.firebasedatabase.app/recomm-list/${id}.json`)
+    .then(res=>
+      { res.data ===null?console.log(res.data):
+        console.log(res.data)
+        setproductDetails(res.data);
+      })
+     
   
-useEffect(()=>
-{
-  axios.get(`https://barterwdcash-default-rtdb.asia-southeast1.firebasedatabase.app/item-list-electronics/${id}.json`)
- 
-  .then(response=>
-    {
-      console.log(response.data)
-      setproductDetails(response.data);
-    })
-},[])
-let keyOne ='itemdetailimg1exp';
+  }, [])
 
-const [imagerender,setimagerender]        = useState(productDetails[keyOne]);
 
-function renderExp(keyRec)
+
+
+
+
+function renderExp(key)
 {
-  setimagerender(productDetails[keyRec]);
+  setimagerender(productDetails[key]);
 }
   
 
   return (
+    
     <div className='product-details-container'>
         <Container>
       <Row>
@@ -44,25 +56,25 @@ function renderExp(keyRec)
         { 
         
          <div className='product-details-feature-img'>
-          <div className='product-details-feature-img-category'  onMouseEnter={()=>renderExp(keyOne="itemdetailimg1exp")} onClick={()=>renderExp(keyOne="itemdetailimg1exp")}>
+          <div className='product-details-feature-img-category'  onMouseEnter={()=>{setkeyOne("itemdetailimg1exp"); renderExp(keyOne) }} onClick={()=>{setkeyOne("itemdetailimg1exp"); renderExp(keyOne) }}>
           <img src={productDetails.itemdetailimg1} alt="no image"/>
           </div>
-          <div className='product-details-feature-img-category'onMouseEnter={()=>renderExp(keyOne="itemdetailimg2exp")} onClick={()=>renderExp(keyOne="itemdetailimg2exp")}>
+          <div className='product-details-feature-img-category'onMouseEnter={()=>{setkeyOne("itemdetailimg2exp"); renderExp(keyOne) }} onClick={()=>{setkeyOne("itemdetailimg2exp"); renderExp(keyOne) }}>
           <img src={productDetails.itemdetailimg2} alt="no image"/>
           </div>
-          <div className='product-details-feature-img-category'onMouseEnter={()=>renderExp(keyOne="itemdetailimg3exp")} onClick={()=>renderExp(keyOne="itemdetailimg3exp")}>
+          <div className='product-details-feature-img-category'onMouseEnter={()=>{setkeyOne("itemdetailimg3exp"); renderExp(keyOne) }} onClick={()=>{setkeyOne("itemdetailimg3exp"); renderExp(keyOne) }}>
           <img src={productDetails.itemdetailimg3} alt="no image"/>
           </div>
-          <div className='product-details-feature-img-category'onMouseEnter={()=>renderExp(keyOne="itemdetailimg4exp")} onClick={()=>renderExp(keyOne="itemdetailimg4exp")}>
+          <div className='product-details-feature-img-category'onMouseEnter={()=>{setkeyOne("itemdetailimg4exp"); renderExp(keyOne) }} onClick={()=>{setkeyOne("itemdetailimg4exp"); renderExp(keyOne) }}>
           <img src={productDetails.itemdetailimg4} alt="no image"/>
           </div>
-          <div className='product-details-feature-img-category'onMouseEnter={()=>renderExp(keyOne="itemdetailimg5exp")} onClick={()=>renderExp(keyOne="itemdetailimg5exp")}>
+          <div className='product-details-feature-img-category'onMouseEnter={()=>{setkeyOne("itemdetailimg5exp"); renderExp(keyOne) }} onClick={()=>{setkeyOne("itemdetailimg5exp"); renderExp(keyOne) }}>
           <img src={productDetails.itemdetailimg5} alt="no image"/>
           </div>
-          <div className='product-details-feature-img-category'onMouseEnter={()=>renderExp(keyOne="itemdetailimg6exp")} onClick={()=>renderExp(keyOne="itemdetailimg6exp")}>
+          <div className='product-details-feature-img-category'onMouseEnter={()=>{setkeyOne("itemdetailimg6exp"); renderExp(keyOne) }} onClick={()=>{setkeyOne("itemdetailimg6exp"); renderExp(keyOne) }}>
           <img src={productDetails.itemdetailimg6} alt="no image"/>
           </div>
-          <div className='product-details-feature-img-category'onMouseEnter={()=>renderExp(keyOne="itemdetailimg7exp")} onClick={()=>renderExp(keyOne="itemdetailimg7exp")}>
+          <div className='product-details-feature-img-category'onMouseEnter={()=>{setkeyOne("itemdetailimg7exp"); renderExp(keyOne) }} onClick={()=>{setkeyOne("itemdetailimg7exp"); renderExp(keyOne) }}>
           <img src={productDetails.itemdetailimg7} alt="no image"/>
           </div>
          </div>

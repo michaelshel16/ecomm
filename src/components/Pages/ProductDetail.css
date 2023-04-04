@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Lobster&family=Poppins:wght@800&display=swap');
+
+.product-details-container
+{
+    margin-top: 40px;
+}
 .product-details-feature-img
 {
     display:flex;

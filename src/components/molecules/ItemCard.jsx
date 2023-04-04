@@ -11,7 +11,7 @@ function ItemCard({itemImg,itemPrice,itemDesc,itemTitle,itemDiscount})
         <div className='item-card-footer'>
           <div className='item-card-footer-content1'>
             <div className='item-card-footer-content1-title'>
-              {itemTitle}
+             <h4>{itemTitle}</h4> 
             </div>
             <div className='item-card-footer-price'>
                 {itemPrice}

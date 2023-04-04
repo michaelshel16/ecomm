@@ -6,7 +6,7 @@
 .item-card-container 
 {   
     width: 350px;
-    height:350px;
+    height:500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,36 +15,25 @@
     border-radius: 10px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     background-color: white;
-    
-
+    transition: ease-in;
 }
 .item-card-container :hover
-{   
-    width: 350px;
-    height:350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    left:5px;
-    border-radius: 10px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    cursor:pointer;
-    transform: scale(1);
-    padding:0px;
-    background-color: white;
-
-    
+{
+   transform: scale(1.02);
+   color:black;
 }
+
+
 .item-card-img
 {   margin:0px;
     padding:0px;
-    width:200px;
-    height:200px;
+    width:320px;
+    height:340px;
     object-fit: contain;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .item-card-img img
 {
@@ -61,12 +50,11 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
+    margin:0px;
 }
 
 .item-card-footer-content1-title
 {
-    font-weight: 800;
-    font-size: 20px;
     width:300px;
     color:black;
     font-family: Arial, Helvetica, sans-serif;
