@@ -21,6 +21,8 @@ function About() {
         <img src={Aboutimage} height="400px" width="500px" alt="no image available"/>
         </div>
         </div>
+        
+         
      
       
       </Container>

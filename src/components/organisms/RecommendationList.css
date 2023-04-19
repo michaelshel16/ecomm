@@ -1,7 +1,7 @@
 .recomm-list
 {
     display: flex;
-   
+    overflow-x: scroll;
    
     justify-content: space-around;
     margin: 0 -10px;

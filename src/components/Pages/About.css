@@ -27,7 +27,7 @@ section
     width:40%;
     border-radius: 15px;
     margin-bottom: 40px;
-    position: absolute;
+   
 }
 .about-content p
 {
@@ -36,7 +36,7 @@ section
 .about-content-container
 {
     display:flex;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
    
    
 }
@@ -47,19 +47,24 @@ section
     align-items: center;
     position: relative;
     top:100px;
-    left: 50%;
+    left:10%;
+    
 }
 .about-content-img img
 {
     border-radius: 40px;
 }
 .about-motto
-{
+{   margin:none;
     color:black;
     font-size: 30px;
+    display: flex;
+    flex-direction: column;
+   
+    
 }
 .about-motto-title
-{
+{   
     text-align: center;
 }
 .about-motto p

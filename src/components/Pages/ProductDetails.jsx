@@ -14,23 +14,33 @@ import {faArrowRotateLeft} from '@fortawesome/free-solid-svg-icons';
 
 function ProductDetails({addtoCart}){ 
   let {id} = useParams();
-  const [productDetails, setproductDetails]          = useState('');
+
+  const [productDetails, setproductDetails]          = useState({});
   const [keyOne,setkeyOne]                           = useState('itemdetailimg1exp');
   const [imagerender,setimagerender]                 = useState(productDetails[keyOne]);
 
   useEffect (() => {
     axios.get(`https://barterwdcash-default-rtdb.asia-southeast1.firebasedatabase.app/item-list-electronics/${id}.json`)
     .then(res => {
-      res.data === null?console.log(res.data):
-      console.log(res.data)
-      setproductDetails(res.data)
-    } )
+        
+         res.data === null ? console.log("no data found"):
+        
+         setproductDetails(res.data)
+         console.log(productDetails)
+        
+
+        
+    })
 
     axios.get(`https://barterwdcash-recomlist-default-rtdb.asia-southeast1.firebasedatabase.app/recomm-list/${id}.json`)
     .then(res=>
-      { res.data ===null?console.log(res.data):
-        console.log(res.data)
-        setproductDetails(res.data);
+      { 
+       res.data === null ? console.log("no data found"):
+     
+       setproductDetails(res.data)
+       console.log(productDetails)
+       
+        
       })
      
   

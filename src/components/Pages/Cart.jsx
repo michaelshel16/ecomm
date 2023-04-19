@@ -1,21 +1,32 @@
 import React from 'react';
 import { Container,Badge } from 'react-bootstrap';
 import "./Cart.css";
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+
+function Cart({cartList,removefromCart,setcartList}) {
+const [Quantity,setQuantity]     = useState(1);
+const [totalPrice,settotalPrice] = useState(1);
 
 
-function Cart({cartList,removefromCart}) {
-const [Quantity,setQuantity] = useState(1);
  
-  function selectqty(e)
+console.log(cartList);
+ 
+axios.get("https://barterwdcash-cartlist-default-rtdb.asia-southeast1.firebasedatabase.app/cart-list.json")
+.then(response=>
   {
-   setQuantity(e.target.value);
-     
-  }
-  
-  
-  
-  console.log(cartList);
+    let cartList = [];
+    for(let key in response.data)
+    {
+      cartList.push({...response.data[key],cartId:key})
+    }
+    setcartList(cartList)
+  })
+
+
+
   
   return (
    <Container>
@@ -47,12 +58,13 @@ const [Quantity,setQuantity] = useState(1);
                      <div>
                       <div>
                         <label>Qty:</label>
-                        <select name="Qty:" className='cart-list-qty' onChange={()=>{selectqty(e)}}>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
+                        <select name="Qty:" className='cart-list-qty' onChange={(e)=>setQuantity(e.target.value)}>
+                          <option></option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
 
                         </select>
                       </div>
@@ -60,7 +72,12 @@ const [Quantity,setQuantity] = useState(1);
                   </div>
                   <div>
                     <div className='cart-list-item-price'>
-                      {item.itemPrice}
+                      {item.itemPrice*item.itemQuantity}
+                    </div>
+                    <div className='cart-list-remove'>
+                     
+                      <FontAwesomeIcon icon={faTrash} onClick={()=>removefromCart(item)} />
+                      
                     </div>
                   </div>
                  </div> 
@@ -78,23 +95,26 @@ const [Quantity,setQuantity] = useState(1);
       }
     
     </div>
-    {
-    cartList.map((item,index)=>
+    
+   
 
-    { 
-      return(<div className='cart-list-total-container' key={index}>
+    
+      <div className='cart-list-total-container' >
       <div className='cart-list-total-subtotal'>
-        <h3>Subtotal:{cartList.reduce((sum,item)=>{return (sum = sum + parseInt(item.itemPrice))},0)}</h3> 
+        <h3>Subtotal:{cartList.reduce((sum,item)=> (sum = sum + parseInt(item.itemPrice)),0)}</h3> 
       </div>
       <div>
         <h5>Delivery Charges:50</h5>
-        <h5>Total:</h5>
+        <h5>Total:{cartList.reduce((sum,item)=> (sum = sum + parseInt(item.itemPrice)),0)+50}</h5>
       </div>
+     
+        <button className='cart-list-checkout'>Checkout</button>
+    
   
-    </div>) 
-    })
+    </div>
    
-    }
+   
+    
     
    </Container>
     
