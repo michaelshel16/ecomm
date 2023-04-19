@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Badge from 'react-bootstrap/Badge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
-import Logo from "../img/logo.png";
+import Logo from "../../assets/icons/logo.png";
 import { 
   Link
    } from 'react-router-dom';
