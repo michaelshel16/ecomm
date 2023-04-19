@@ -16,7 +16,7 @@ function ProductDetails({addtoCart}){
   let {id} = useParams();
 
   const [productDetails, setproductDetails]          = useState({});
-  const [keyOne,setkeyOne]                           = useState('itemdetailimg1exp');
+  const [keyOne,setkeyOne]                           = useState('');
   const [imagerender,setimagerender]                 = useState(productDetails[keyOne]);
 
   useEffect (() => {

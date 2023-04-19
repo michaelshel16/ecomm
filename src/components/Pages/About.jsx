@@ -1,7 +1,7 @@
 import React from 'react';
 import "./About.css";
 import { Container } from 'react-bootstrap';
-import Aboutimage from "../img/aboutimg.jpg";
+import Aboutimage from "../../assets/img/aboutimg.jpg";
 
 
 function About() {
