@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import HomeBanner1 from "../../assets/img/HomeBanner1.jpg"
 import HomeBanner2 from "../../assets/img/HomeBanner2.jpg"
 import HomeBanner3 from "../../assets/img/HomeBanner3.jpg"
-function UncontrolledExample() {
+function HomeBanner() {
   return (
     <Carousel>
       <Carousel.Item>
@@ -48,5 +48,5 @@ function UncontrolledExample() {
   );
 }
 
-export default UncontrolledExample;
+export default HomeBanner ;
     
